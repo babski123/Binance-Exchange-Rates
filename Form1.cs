@@ -195,6 +195,16 @@ namespace Binance_Exchange_Rates
             Application.Exit();
         }
 
+        private void hideToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Hide();
+        }
+
+        private void showToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Show();
+        }
+
         class StreamsPayload
         {
             public string stream { get; set; }

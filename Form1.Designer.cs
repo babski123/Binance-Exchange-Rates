@@ -30,6 +30,7 @@ namespace Binance_Exchange_Rates
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.Title = new System.Windows.Forms.Label();
             this.Table = new System.Windows.Forms.TableLayoutPanel();
             this.BTCUSDT = new System.Windows.Forms.Label();
@@ -72,10 +73,16 @@ namespace Binance_Exchange_Rates
             this.USDtoPHPChecker = new System.Windows.Forms.Timer(this.components);
             this.Connection = new System.Windows.Forms.Label();
             this.ConnectionStatus = new System.Windows.Forms.Label();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.MainFormContextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.hideToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.SystemTrayIcon = new System.Windows.Forms.NotifyIcon(this.components);
+            this.NotifyIconContextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.showToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exitToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.Table.SuspendLayout();
-            this.contextMenuStrip1.SuspendLayout();
+            this.MainFormContextMenuStrip.SuspendLayout();
+            this.NotifyIconContextMenuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
             // Title
@@ -523,19 +530,56 @@ namespace Binance_Exchange_Rates
             this.ConnectionStatus.TabIndex = 4;
             this.ConnectionStatus.Text = "...";
             // 
-            // contextMenuStrip1
+            // MainFormContextMenuStrip
             // 
-            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.MainFormContextMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.hideToolStripMenuItem,
             this.exitToolStripMenuItem});
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(94, 26);
+            this.MainFormContextMenuStrip.Name = "contextMenuStrip1";
+            this.MainFormContextMenuStrip.Size = new System.Drawing.Size(100, 48);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(93, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(99, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
+            // 
+            // hideToolStripMenuItem
+            // 
+            this.hideToolStripMenuItem.Name = "hideToolStripMenuItem";
+            this.hideToolStripMenuItem.Size = new System.Drawing.Size(99, 22);
+            this.hideToolStripMenuItem.Text = "Hide";
+            this.hideToolStripMenuItem.Click += new System.EventHandler(this.hideToolStripMenuItem_Click);
+            // 
+            // SystemTrayIcon
+            // 
+            this.SystemTrayIcon.ContextMenuStrip = this.NotifyIconContextMenuStrip;
+            this.SystemTrayIcon.Icon = ((System.Drawing.Icon)(resources.GetObject("SystemTrayIcon.Icon")));
+            this.SystemTrayIcon.Text = "Binance Exchange Rates";
+            this.SystemTrayIcon.Visible = true;
+            // 
+            // NotifyIconContextMenuStrip
+            // 
+            this.NotifyIconContextMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.showToolStripMenuItem,
+            this.exitToolStripMenuItem1});
+            this.NotifyIconContextMenuStrip.Name = "NotifyIconContextMenuStrip";
+            this.NotifyIconContextMenuStrip.Size = new System.Drawing.Size(104, 48);
+            // 
+            // showToolStripMenuItem
+            // 
+            this.showToolStripMenuItem.Name = "showToolStripMenuItem";
+            this.showToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
+            this.showToolStripMenuItem.Text = "Show";
+            this.showToolStripMenuItem.Click += new System.EventHandler(this.showToolStripMenuItem_Click);
+            // 
+            // exitToolStripMenuItem1
+            // 
+            this.exitToolStripMenuItem1.Name = "exitToolStripMenuItem1";
+            this.exitToolStripMenuItem1.Size = new System.Drawing.Size(103, 22);
+            this.exitToolStripMenuItem1.Text = "Exit";
+            this.exitToolStripMenuItem1.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
             // MainForm
             // 
@@ -543,7 +587,7 @@ namespace Binance_Exchange_Rates
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.ClientSize = new System.Drawing.Size(302, 34);
-            this.ContextMenuStrip = this.contextMenuStrip1;
+            this.ContextMenuStrip = this.MainFormContextMenuStrip;
             this.ControlBox = false;
             this.Controls.Add(this.ConnectionStatus);
             this.Controls.Add(this.Connection);
@@ -564,7 +608,8 @@ namespace Binance_Exchange_Rates
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseMove);
             this.Table.ResumeLayout(false);
             this.Table.PerformLayout();
-            this.contextMenuStrip1.ResumeLayout(false);
+            this.MainFormContextMenuStrip.ResumeLayout(false);
+            this.NotifyIconContextMenuStrip.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -614,8 +659,13 @@ namespace Binance_Exchange_Rates
         private System.Windows.Forms.Timer USDtoPHPChecker;
         private System.Windows.Forms.Label Connection;
         private System.Windows.Forms.Label ConnectionStatus;
-        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ContextMenuStrip MainFormContextMenuStrip;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem hideToolStripMenuItem;
+        private System.Windows.Forms.NotifyIcon SystemTrayIcon;
+        private System.Windows.Forms.ContextMenuStrip NotifyIconContextMenuStrip;
+        private System.Windows.Forms.ToolStripMenuItem showToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem1;
     }
 }
 
