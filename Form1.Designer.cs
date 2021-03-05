@@ -74,12 +74,13 @@ namespace Binance_Exchange_Rates
             this.Connection = new System.Windows.Forms.Label();
             this.ConnectionStatus = new System.Windows.Forms.Label();
             this.MainFormContextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.hideToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.SystemTrayIcon = new System.Windows.Forms.NotifyIcon(this.components);
             this.NotifyIconContextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.showToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.hideToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.Table.SuspendLayout();
             this.MainFormContextMenuStrip.SuspendLayout();
             this.NotifyIconContextMenuStrip.SuspendLayout();
@@ -538,13 +539,6 @@ namespace Binance_Exchange_Rates
             this.MainFormContextMenuStrip.Name = "contextMenuStrip1";
             this.MainFormContextMenuStrip.Size = new System.Drawing.Size(100, 48);
             // 
-            // exitToolStripMenuItem
-            // 
-            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(99, 22);
-            this.exitToolStripMenuItem.Text = "Exit";
-            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
-            // 
             // hideToolStripMenuItem
             // 
             this.hideToolStripMenuItem.Name = "hideToolStripMenuItem";
@@ -552,20 +546,29 @@ namespace Binance_Exchange_Rates
             this.hideToolStripMenuItem.Text = "Hide";
             this.hideToolStripMenuItem.Click += new System.EventHandler(this.hideToolStripMenuItem_Click);
             // 
+            // exitToolStripMenuItem
+            // 
+            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(99, 22);
+            this.exitToolStripMenuItem.Text = "Exit";
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
+            // 
             // SystemTrayIcon
             // 
             this.SystemTrayIcon.ContextMenuStrip = this.NotifyIconContextMenuStrip;
             this.SystemTrayIcon.Icon = ((System.Drawing.Icon)(resources.GetObject("SystemTrayIcon.Icon")));
             this.SystemTrayIcon.Text = "Binance Exchange Rates";
             this.SystemTrayIcon.Visible = true;
+            this.SystemTrayIcon.DoubleClick += new System.EventHandler(this.showToolStripMenuItem_Click);
             // 
             // NotifyIconContextMenuStrip
             // 
             this.NotifyIconContextMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.showToolStripMenuItem,
+            this.hideToolStripMenuItem1,
             this.exitToolStripMenuItem1});
             this.NotifyIconContextMenuStrip.Name = "NotifyIconContextMenuStrip";
-            this.NotifyIconContextMenuStrip.Size = new System.Drawing.Size(104, 48);
+            this.NotifyIconContextMenuStrip.Size = new System.Drawing.Size(104, 70);
             // 
             // showToolStripMenuItem
             // 
@@ -580,6 +583,13 @@ namespace Binance_Exchange_Rates
             this.exitToolStripMenuItem1.Size = new System.Drawing.Size(103, 22);
             this.exitToolStripMenuItem1.Text = "Exit";
             this.exitToolStripMenuItem1.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
+            // 
+            // hideToolStripMenuItem1
+            // 
+            this.hideToolStripMenuItem1.Name = "hideToolStripMenuItem1";
+            this.hideToolStripMenuItem1.Size = new System.Drawing.Size(103, 22);
+            this.hideToolStripMenuItem1.Text = "Hide";
+            this.hideToolStripMenuItem1.Click += new System.EventHandler(this.hideToolStripMenuItem_Click);
             // 
             // MainForm
             // 
@@ -666,6 +676,7 @@ namespace Binance_Exchange_Rates
         private System.Windows.Forms.ContextMenuStrip NotifyIconContextMenuStrip;
         private System.Windows.Forms.ToolStripMenuItem showToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem hideToolStripMenuItem1;
     }
 }
 
