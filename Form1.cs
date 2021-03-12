@@ -32,7 +32,7 @@ namespace Binance_Exchange_Rates
 
         public async Task Main()
         {
-            string streamNames = "xrpusdt@ticker/btcusdt@ticker/ethusdt@ticker/bchusdt@ticker/dogeusdt@ticker/ltcusdt@ticker/adausdt@ticker/dotusdt@ticker/xlmusdt@ticker/bnbusdt@ticker/linkusdt@ticker/xmrusdt@ticker";
+            string streamNames = "xrpusdt@ticker/btcusdt@ticker/ethusdt@ticker/bchusdt@ticker/dogeusdt@ticker/ltcusdt@ticker/adausdt@ticker/dotusdt@ticker/xlmusdt@ticker/bnbusdt@ticker/linkusdt@ticker/xmrusdt@ticker/degousdt@ticker";
             do
             {
                 using (var socket = new ClientWebSocket())
@@ -146,10 +146,15 @@ namespace Binance_Exchange_Rates
                                 XMRPERCENT.Text = priceChangePercentFormatted;
                                 XMRPERCENT.ForeColor = priceChangePercentColor;
                                 break;
+                            case "DEGOUSDT":
+                                DEGOPRICE.Text = lastPriceFormatted;
+                                DEGOPERCENT.Text = priceChangePercentFormatted;
+                                DEGOPERCENT.ForeColor = priceChangePercentColor;
+                                break;
                         }
 
                         Title.Text = "Binance Cryptocurrency Rates";
-                        this.Size = new Size(302,321);
+                        this.Size = new Size(302,311);
 
                     }
                 }

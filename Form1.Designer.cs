@@ -79,8 +79,11 @@ namespace Binance_Exchange_Rates
             this.SystemTrayIcon = new System.Windows.Forms.NotifyIcon(this.components);
             this.NotifyIconContextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.showToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.exitToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.hideToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.exitToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.DEGOUSDT = new System.Windows.Forms.Label();
+            this.DEGOPRICE = new System.Windows.Forms.Label();
+            this.DEGOPERCENT = new System.Windows.Forms.Label();
             this.Table.SuspendLayout();
             this.MainFormContextMenuStrip.SuspendLayout();
             this.NotifyIconContextMenuStrip.SuspendLayout();
@@ -140,9 +143,12 @@ namespace Binance_Exchange_Rates
             this.Table.Controls.Add(this.BNBPERCENT, 2, 9);
             this.Table.Controls.Add(this.LINKPERCENT, 2, 10);
             this.Table.Controls.Add(this.XMRPERCENT, 2, 11);
+            this.Table.Controls.Add(this.DEGOUSDT, 0, 12);
+            this.Table.Controls.Add(this.DEGOPRICE, 1, 12);
+            this.Table.Controls.Add(this.DEGOPERCENT, 2, 12);
             this.Table.Location = new System.Drawing.Point(12, 69);
             this.Table.Name = "Table";
-            this.Table.RowCount = 12;
+            this.Table.RowCount = 13;
             this.Table.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333332F));
             this.Table.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333332F));
             this.Table.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333332F));
@@ -155,7 +161,8 @@ namespace Binance_Exchange_Rates
             this.Table.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333332F));
             this.Table.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333332F));
             this.Table.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333332F));
-            this.Table.Size = new System.Drawing.Size(278, 240);
+            this.Table.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.Table.Size = new System.Drawing.Size(278, 237);
             this.Table.TabIndex = 1;
             this.Table.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
             this.Table.MouseEnter += new System.EventHandler(this.MainForm_MouseEnter);
@@ -175,7 +182,7 @@ namespace Binance_Exchange_Rates
             // XRPUSDT
             // 
             this.XRPUSDT.AutoSize = true;
-            this.XRPUSDT.Location = new System.Drawing.Point(3, 20);
+            this.XRPUSDT.Location = new System.Drawing.Point(3, 18);
             this.XRPUSDT.Name = "XRPUSDT";
             this.XRPUSDT.Size = new System.Drawing.Size(37, 13);
             this.XRPUSDT.TabIndex = 1;
@@ -185,7 +192,7 @@ namespace Binance_Exchange_Rates
             // ETHUSDT
             // 
             this.ETHUSDT.AutoSize = true;
-            this.ETHUSDT.Location = new System.Drawing.Point(3, 40);
+            this.ETHUSDT.Location = new System.Drawing.Point(3, 36);
             this.ETHUSDT.Name = "ETHUSDT";
             this.ETHUSDT.Size = new System.Drawing.Size(52, 13);
             this.ETHUSDT.TabIndex = 2;
@@ -195,7 +202,7 @@ namespace Binance_Exchange_Rates
             // BCHUSDT
             // 
             this.BCHUSDT.AutoSize = true;
-            this.BCHUSDT.Location = new System.Drawing.Point(3, 60);
+            this.BCHUSDT.Location = new System.Drawing.Point(3, 54);
             this.BCHUSDT.Name = "BCHUSDT";
             this.BCHUSDT.Size = new System.Drawing.Size(66, 13);
             this.BCHUSDT.TabIndex = 3;
@@ -205,7 +212,7 @@ namespace Binance_Exchange_Rates
             // DOGEUSDT
             // 
             this.DOGEUSDT.AutoSize = true;
-            this.DOGEUSDT.Location = new System.Drawing.Point(3, 80);
+            this.DOGEUSDT.Location = new System.Drawing.Point(3, 72);
             this.DOGEUSDT.Name = "DOGEUSDT";
             this.DOGEUSDT.Size = new System.Drawing.Size(53, 13);
             this.DOGEUSDT.TabIndex = 4;
@@ -215,7 +222,7 @@ namespace Binance_Exchange_Rates
             // LTCUSDT
             // 
             this.LTCUSDT.AutoSize = true;
-            this.LTCUSDT.Location = new System.Drawing.Point(3, 100);
+            this.LTCUSDT.Location = new System.Drawing.Point(3, 90);
             this.LTCUSDT.Name = "LTCUSDT";
             this.LTCUSDT.Size = new System.Drawing.Size(44, 13);
             this.LTCUSDT.TabIndex = 5;
@@ -225,7 +232,7 @@ namespace Binance_Exchange_Rates
             // ADAUSDT
             // 
             this.ADAUSDT.AutoSize = true;
-            this.ADAUSDT.Location = new System.Drawing.Point(3, 120);
+            this.ADAUSDT.Location = new System.Drawing.Point(3, 108);
             this.ADAUSDT.Name = "ADAUSDT";
             this.ADAUSDT.Size = new System.Drawing.Size(47, 13);
             this.ADAUSDT.TabIndex = 6;
@@ -235,7 +242,7 @@ namespace Binance_Exchange_Rates
             // DOTUSDT
             // 
             this.DOTUSDT.AutoSize = true;
-            this.DOTUSDT.Location = new System.Drawing.Point(3, 140);
+            this.DOTUSDT.Location = new System.Drawing.Point(3, 126);
             this.DOTUSDT.Name = "DOTUSDT";
             this.DOTUSDT.Size = new System.Drawing.Size(49, 13);
             this.DOTUSDT.TabIndex = 7;
@@ -245,7 +252,7 @@ namespace Binance_Exchange_Rates
             // XLMUSDT
             // 
             this.XLMUSDT.AutoSize = true;
-            this.XLMUSDT.Location = new System.Drawing.Point(3, 160);
+            this.XLMUSDT.Location = new System.Drawing.Point(3, 144);
             this.XLMUSDT.Name = "XLMUSDT";
             this.XLMUSDT.Size = new System.Drawing.Size(36, 13);
             this.XLMUSDT.TabIndex = 8;
@@ -255,7 +262,7 @@ namespace Binance_Exchange_Rates
             // BNBUSDT
             // 
             this.BNBUSDT.AutoSize = true;
-            this.BNBUSDT.Location = new System.Drawing.Point(3, 180);
+            this.BNBUSDT.Location = new System.Drawing.Point(3, 162);
             this.BNBUSDT.Name = "BNBUSDT";
             this.BNBUSDT.Size = new System.Drawing.Size(70, 13);
             this.BNBUSDT.TabIndex = 9;
@@ -265,7 +272,7 @@ namespace Binance_Exchange_Rates
             // LINKUSDT
             // 
             this.LINKUSDT.AutoSize = true;
-            this.LINKUSDT.Location = new System.Drawing.Point(3, 200);
+            this.LINKUSDT.Location = new System.Drawing.Point(3, 180);
             this.LINKUSDT.Name = "LINKUSDT";
             this.LINKUSDT.Size = new System.Drawing.Size(50, 13);
             this.LINKUSDT.TabIndex = 10;
@@ -275,7 +282,7 @@ namespace Binance_Exchange_Rates
             // XMRUSDT
             // 
             this.XMRUSDT.AutoSize = true;
-            this.XMRUSDT.Location = new System.Drawing.Point(3, 220);
+            this.XMRUSDT.Location = new System.Drawing.Point(3, 198);
             this.XMRUSDT.Name = "XMRUSDT";
             this.XMRUSDT.Size = new System.Drawing.Size(43, 13);
             this.XMRUSDT.TabIndex = 11;
@@ -294,7 +301,7 @@ namespace Binance_Exchange_Rates
             // XRPPRICE
             // 
             this.XRPPRICE.AutoSize = true;
-            this.XRPPRICE.Location = new System.Drawing.Point(95, 20);
+            this.XRPPRICE.Location = new System.Drawing.Point(95, 18);
             this.XRPPRICE.Name = "XRPPRICE";
             this.XRPPRICE.Size = new System.Drawing.Size(16, 13);
             this.XRPPRICE.TabIndex = 13;
@@ -303,7 +310,7 @@ namespace Binance_Exchange_Rates
             // ETHPRICE
             // 
             this.ETHPRICE.AutoSize = true;
-            this.ETHPRICE.Location = new System.Drawing.Point(95, 40);
+            this.ETHPRICE.Location = new System.Drawing.Point(95, 36);
             this.ETHPRICE.Name = "ETHPRICE";
             this.ETHPRICE.Size = new System.Drawing.Size(16, 13);
             this.ETHPRICE.TabIndex = 14;
@@ -312,7 +319,7 @@ namespace Binance_Exchange_Rates
             // BCHPRICE
             // 
             this.BCHPRICE.AutoSize = true;
-            this.BCHPRICE.Location = new System.Drawing.Point(95, 60);
+            this.BCHPRICE.Location = new System.Drawing.Point(95, 54);
             this.BCHPRICE.Name = "BCHPRICE";
             this.BCHPRICE.Size = new System.Drawing.Size(16, 13);
             this.BCHPRICE.TabIndex = 15;
@@ -321,7 +328,7 @@ namespace Binance_Exchange_Rates
             // DOGEPRICE
             // 
             this.DOGEPRICE.AutoSize = true;
-            this.DOGEPRICE.Location = new System.Drawing.Point(95, 80);
+            this.DOGEPRICE.Location = new System.Drawing.Point(95, 72);
             this.DOGEPRICE.Name = "DOGEPRICE";
             this.DOGEPRICE.Size = new System.Drawing.Size(16, 13);
             this.DOGEPRICE.TabIndex = 16;
@@ -330,7 +337,7 @@ namespace Binance_Exchange_Rates
             // LTCPRICE
             // 
             this.LTCPRICE.AutoSize = true;
-            this.LTCPRICE.Location = new System.Drawing.Point(95, 100);
+            this.LTCPRICE.Location = new System.Drawing.Point(95, 90);
             this.LTCPRICE.Name = "LTCPRICE";
             this.LTCPRICE.Size = new System.Drawing.Size(16, 13);
             this.LTCPRICE.TabIndex = 17;
@@ -339,7 +346,7 @@ namespace Binance_Exchange_Rates
             // ADAPRICE
             // 
             this.ADAPRICE.AutoSize = true;
-            this.ADAPRICE.Location = new System.Drawing.Point(95, 120);
+            this.ADAPRICE.Location = new System.Drawing.Point(95, 108);
             this.ADAPRICE.Name = "ADAPRICE";
             this.ADAPRICE.Size = new System.Drawing.Size(16, 13);
             this.ADAPRICE.TabIndex = 18;
@@ -348,7 +355,7 @@ namespace Binance_Exchange_Rates
             // DOTPRICE
             // 
             this.DOTPRICE.AutoSize = true;
-            this.DOTPRICE.Location = new System.Drawing.Point(95, 140);
+            this.DOTPRICE.Location = new System.Drawing.Point(95, 126);
             this.DOTPRICE.Name = "DOTPRICE";
             this.DOTPRICE.Size = new System.Drawing.Size(16, 13);
             this.DOTPRICE.TabIndex = 19;
@@ -357,7 +364,7 @@ namespace Binance_Exchange_Rates
             // XLMPRICE
             // 
             this.XLMPRICE.AutoSize = true;
-            this.XLMPRICE.Location = new System.Drawing.Point(95, 160);
+            this.XLMPRICE.Location = new System.Drawing.Point(95, 144);
             this.XLMPRICE.Name = "XLMPRICE";
             this.XLMPRICE.Size = new System.Drawing.Size(16, 13);
             this.XLMPRICE.TabIndex = 20;
@@ -366,7 +373,7 @@ namespace Binance_Exchange_Rates
             // BNBPRICE
             // 
             this.BNBPRICE.AutoSize = true;
-            this.BNBPRICE.Location = new System.Drawing.Point(95, 180);
+            this.BNBPRICE.Location = new System.Drawing.Point(95, 162);
             this.BNBPRICE.Name = "BNBPRICE";
             this.BNBPRICE.Size = new System.Drawing.Size(16, 13);
             this.BNBPRICE.TabIndex = 21;
@@ -375,7 +382,7 @@ namespace Binance_Exchange_Rates
             // LINKPRICE
             // 
             this.LINKPRICE.AutoSize = true;
-            this.LINKPRICE.Location = new System.Drawing.Point(95, 200);
+            this.LINKPRICE.Location = new System.Drawing.Point(95, 180);
             this.LINKPRICE.Name = "LINKPRICE";
             this.LINKPRICE.Size = new System.Drawing.Size(16, 13);
             this.LINKPRICE.TabIndex = 22;
@@ -384,7 +391,7 @@ namespace Binance_Exchange_Rates
             // XMRPRICE
             // 
             this.XMRPRICE.AutoSize = true;
-            this.XMRPRICE.Location = new System.Drawing.Point(95, 220);
+            this.XMRPRICE.Location = new System.Drawing.Point(95, 198);
             this.XMRPRICE.Name = "XMRPRICE";
             this.XMRPRICE.Size = new System.Drawing.Size(16, 13);
             this.XMRPRICE.TabIndex = 23;
@@ -402,7 +409,7 @@ namespace Binance_Exchange_Rates
             // XRPPERCENT
             // 
             this.XRPPERCENT.AutoSize = true;
-            this.XRPPERCENT.Location = new System.Drawing.Point(187, 20);
+            this.XRPPERCENT.Location = new System.Drawing.Point(187, 18);
             this.XRPPERCENT.Name = "XRPPERCENT";
             this.XRPPERCENT.Size = new System.Drawing.Size(16, 13);
             this.XRPPERCENT.TabIndex = 25;
@@ -411,7 +418,7 @@ namespace Binance_Exchange_Rates
             // ETHPERCENT
             // 
             this.ETHPERCENT.AutoSize = true;
-            this.ETHPERCENT.Location = new System.Drawing.Point(187, 40);
+            this.ETHPERCENT.Location = new System.Drawing.Point(187, 36);
             this.ETHPERCENT.Name = "ETHPERCENT";
             this.ETHPERCENT.Size = new System.Drawing.Size(16, 13);
             this.ETHPERCENT.TabIndex = 26;
@@ -420,7 +427,7 @@ namespace Binance_Exchange_Rates
             // BCHPERCENT
             // 
             this.BCHPERCENT.AutoSize = true;
-            this.BCHPERCENT.Location = new System.Drawing.Point(187, 60);
+            this.BCHPERCENT.Location = new System.Drawing.Point(187, 54);
             this.BCHPERCENT.Name = "BCHPERCENT";
             this.BCHPERCENT.Size = new System.Drawing.Size(16, 13);
             this.BCHPERCENT.TabIndex = 27;
@@ -429,7 +436,7 @@ namespace Binance_Exchange_Rates
             // DOGEPERCENT
             // 
             this.DOGEPERCENT.AutoSize = true;
-            this.DOGEPERCENT.Location = new System.Drawing.Point(187, 80);
+            this.DOGEPERCENT.Location = new System.Drawing.Point(187, 72);
             this.DOGEPERCENT.Name = "DOGEPERCENT";
             this.DOGEPERCENT.Size = new System.Drawing.Size(16, 13);
             this.DOGEPERCENT.TabIndex = 28;
@@ -438,7 +445,7 @@ namespace Binance_Exchange_Rates
             // LTCPERCENT
             // 
             this.LTCPERCENT.AutoSize = true;
-            this.LTCPERCENT.Location = new System.Drawing.Point(187, 100);
+            this.LTCPERCENT.Location = new System.Drawing.Point(187, 90);
             this.LTCPERCENT.Name = "LTCPERCENT";
             this.LTCPERCENT.Size = new System.Drawing.Size(16, 13);
             this.LTCPERCENT.TabIndex = 29;
@@ -447,7 +454,7 @@ namespace Binance_Exchange_Rates
             // ADAPERCENT
             // 
             this.ADAPERCENT.AutoSize = true;
-            this.ADAPERCENT.Location = new System.Drawing.Point(187, 120);
+            this.ADAPERCENT.Location = new System.Drawing.Point(187, 108);
             this.ADAPERCENT.Name = "ADAPERCENT";
             this.ADAPERCENT.Size = new System.Drawing.Size(16, 13);
             this.ADAPERCENT.TabIndex = 30;
@@ -456,7 +463,7 @@ namespace Binance_Exchange_Rates
             // DOTPERCENT
             // 
             this.DOTPERCENT.AutoSize = true;
-            this.DOTPERCENT.Location = new System.Drawing.Point(187, 140);
+            this.DOTPERCENT.Location = new System.Drawing.Point(187, 126);
             this.DOTPERCENT.Name = "DOTPERCENT";
             this.DOTPERCENT.Size = new System.Drawing.Size(16, 13);
             this.DOTPERCENT.TabIndex = 31;
@@ -465,7 +472,7 @@ namespace Binance_Exchange_Rates
             // XLMPERCENT
             // 
             this.XLMPERCENT.AutoSize = true;
-            this.XLMPERCENT.Location = new System.Drawing.Point(187, 160);
+            this.XLMPERCENT.Location = new System.Drawing.Point(187, 144);
             this.XLMPERCENT.Name = "XLMPERCENT";
             this.XLMPERCENT.Size = new System.Drawing.Size(16, 13);
             this.XLMPERCENT.TabIndex = 32;
@@ -474,7 +481,7 @@ namespace Binance_Exchange_Rates
             // BNBPERCENT
             // 
             this.BNBPERCENT.AutoSize = true;
-            this.BNBPERCENT.Location = new System.Drawing.Point(187, 180);
+            this.BNBPERCENT.Location = new System.Drawing.Point(187, 162);
             this.BNBPERCENT.Name = "BNBPERCENT";
             this.BNBPERCENT.Size = new System.Drawing.Size(16, 13);
             this.BNBPERCENT.TabIndex = 33;
@@ -483,7 +490,7 @@ namespace Binance_Exchange_Rates
             // LINKPERCENT
             // 
             this.LINKPERCENT.AutoSize = true;
-            this.LINKPERCENT.Location = new System.Drawing.Point(187, 200);
+            this.LINKPERCENT.Location = new System.Drawing.Point(187, 180);
             this.LINKPERCENT.Name = "LINKPERCENT";
             this.LINKPERCENT.Size = new System.Drawing.Size(16, 13);
             this.LINKPERCENT.TabIndex = 34;
@@ -492,7 +499,7 @@ namespace Binance_Exchange_Rates
             // XMRPERCENT
             // 
             this.XMRPERCENT.AutoSize = true;
-            this.XMRPERCENT.Location = new System.Drawing.Point(187, 220);
+            this.XMRPERCENT.Location = new System.Drawing.Point(187, 198);
             this.XMRPERCENT.Name = "XMRPERCENT";
             this.XMRPERCENT.Size = new System.Drawing.Size(16, 13);
             this.XMRPERCENT.TabIndex = 35;
@@ -577,6 +584,13 @@ namespace Binance_Exchange_Rates
             this.showToolStripMenuItem.Text = "Show";
             this.showToolStripMenuItem.Click += new System.EventHandler(this.showToolStripMenuItem_Click);
             // 
+            // hideToolStripMenuItem1
+            // 
+            this.hideToolStripMenuItem1.Name = "hideToolStripMenuItem1";
+            this.hideToolStripMenuItem1.Size = new System.Drawing.Size(103, 22);
+            this.hideToolStripMenuItem1.Text = "Hide";
+            this.hideToolStripMenuItem1.Click += new System.EventHandler(this.hideToolStripMenuItem_Click);
+            // 
             // exitToolStripMenuItem1
             // 
             this.exitToolStripMenuItem1.Name = "exitToolStripMenuItem1";
@@ -584,12 +598,35 @@ namespace Binance_Exchange_Rates
             this.exitToolStripMenuItem1.Text = "Exit";
             this.exitToolStripMenuItem1.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
-            // hideToolStripMenuItem1
+            // DEGOUSDT
             // 
-            this.hideToolStripMenuItem1.Name = "hideToolStripMenuItem1";
-            this.hideToolStripMenuItem1.Size = new System.Drawing.Size(103, 22);
-            this.hideToolStripMenuItem1.Text = "Hide";
-            this.hideToolStripMenuItem1.Click += new System.EventHandler(this.hideToolStripMenuItem_Click);
+            this.DEGOUSDT.AutoSize = true;
+            this.DEGOUSDT.Location = new System.Drawing.Point(3, 216);
+            this.DEGOUSDT.Name = "DEGOUSDT";
+            this.DEGOUSDT.Size = new System.Drawing.Size(57, 13);
+            this.DEGOUSDT.TabIndex = 36;
+            this.DEGOUSDT.Text = "Dego Coin";
+            this.DEGOUSDT.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // DEGOPRICE
+            // 
+            this.DEGOPRICE.AutoSize = true;
+            this.DEGOPRICE.Location = new System.Drawing.Point(95, 216);
+            this.DEGOPRICE.Name = "DEGOPRICE";
+            this.DEGOPRICE.Size = new System.Drawing.Size(16, 13);
+            this.DEGOPRICE.TabIndex = 37;
+            this.DEGOPRICE.Text = "...";
+            this.DEGOPRICE.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // DEGOPERCENT
+            // 
+            this.DEGOPERCENT.AutoSize = true;
+            this.DEGOPERCENT.Location = new System.Drawing.Point(187, 216);
+            this.DEGOPERCENT.Name = "DEGOPERCENT";
+            this.DEGOPERCENT.Size = new System.Drawing.Size(16, 13);
+            this.DEGOPERCENT.TabIndex = 38;
+            this.DEGOPERCENT.Text = "...";
+            this.DEGOPERCENT.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // MainForm
             // 
@@ -677,6 +714,9 @@ namespace Binance_Exchange_Rates
         private System.Windows.Forms.ToolStripMenuItem showToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem hideToolStripMenuItem1;
+        private System.Windows.Forms.Label DEGOUSDT;
+        private System.Windows.Forms.Label DEGOPRICE;
+        private System.Windows.Forms.Label DEGOPERCENT;
     }
 }
 
