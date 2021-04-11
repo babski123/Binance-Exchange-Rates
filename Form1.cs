@@ -75,7 +75,7 @@ namespace Binance_Exchange_Rates
                         var receivedMsg = await reader.ReadToEndAsync();
                         StreamsPayload payload = JsonSerializer.Deserialize<StreamsPayload>(receivedMsg);
                         TickerStreamPayload data = payload.data;
-                        Double lastPrice = Double.Parse(data.c) * USDtoPHPRate;
+                        Double lastPrice = Double.Parse(data.c) * Double.Parse(PHPVALUE.Text);
                         Double priceChangePercent = Double.Parse(data.P);
                         String lastPriceFormatted = "₱" + String.Format("{0:n}", lastPrice);
                         String priceChangePercentFormatted = String.Format("{0:n}", priceChangePercent) + "%";
@@ -161,15 +161,6 @@ namespace Binance_Exchange_Rates
             } while (true);
         }
 
-        private async void USDtoPHPChecker_Tick(object sender, EventArgs e)
-        {
-            string responseBody = await client.GetStringAsync("https://api.exchangeratesapi.io/latest?base=USD&symbols=PHP");
-            CurrencyRatesData currencyRatesData = JsonSerializer.Deserialize<CurrencyRatesData>(responseBody);
-            USDtoPHPRate = currencyRatesData.rates.PHP;
-            USDPHP.Text = "1 USD = ₱" + String.Format("{0:n}", USDtoPHPRate);
-            //Trace.WriteLine(socketRef.State);
-        }
-
         private void Form1_MouseDown(object sender, MouseEventArgs e)
         {
             _mouseLoc = e.Location;
@@ -183,16 +174,6 @@ namespace Binance_Exchange_Rates
                 int dy = e.Location.Y - _mouseLoc.Y;
                 this.Location = new Point(this.Location.X + dx, this.Location.Y + dy);
             }
-        }
-
-        private void MainForm_MouseEnter(object sender, EventArgs e)
-        {
-            Opacity = 1.0;
-        }
-
-        private void MainForm_MouseLeave(object sender, EventArgs e)
-        {
-            Opacity = 0.5;
         }
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)

@@ -69,8 +69,9 @@ namespace Binance_Exchange_Rates
             this.BNBPERCENT = new System.Windows.Forms.Label();
             this.LINKPERCENT = new System.Windows.Forms.Label();
             this.XMRPERCENT = new System.Windows.Forms.Label();
-            this.USDPHP = new System.Windows.Forms.Label();
-            this.USDtoPHPChecker = new System.Windows.Forms.Timer(this.components);
+            this.DEGOUSDT = new System.Windows.Forms.Label();
+            this.DEGOPRICE = new System.Windows.Forms.Label();
+            this.DEGOPERCENT = new System.Windows.Forms.Label();
             this.Connection = new System.Windows.Forms.Label();
             this.ConnectionStatus = new System.Windows.Forms.Label();
             this.MainFormContextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
@@ -81,9 +82,8 @@ namespace Binance_Exchange_Rates
             this.showToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.hideToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.DEGOUSDT = new System.Windows.Forms.Label();
-            this.DEGOPRICE = new System.Windows.Forms.Label();
-            this.DEGOPERCENT = new System.Windows.Forms.Label();
+            this.USDPHP = new System.Windows.Forms.Label();
+            this.PHPVALUE = new System.Windows.Forms.TextBox();
             this.Table.SuspendLayout();
             this.MainFormContextMenuStrip.SuspendLayout();
             this.NotifyIconContextMenuStrip.SuspendLayout();
@@ -165,8 +165,6 @@ namespace Binance_Exchange_Rates
             this.Table.Size = new System.Drawing.Size(278, 237);
             this.Table.TabIndex = 1;
             this.Table.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
-            this.Table.MouseEnter += new System.EventHandler(this.MainForm_MouseEnter);
-            this.Table.MouseLeave += new System.EventHandler(this.MainForm_MouseLeave);
             this.Table.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseMove);
             // 
             // BTCUSDT
@@ -505,20 +503,35 @@ namespace Binance_Exchange_Rates
             this.XMRPERCENT.TabIndex = 35;
             this.XMRPERCENT.Text = "...";
             // 
-            // USDPHP
+            // DEGOUSDT
             // 
-            this.USDPHP.AutoSize = true;
-            this.USDPHP.Location = new System.Drawing.Point(15, 42);
-            this.USDPHP.Name = "USDPHP";
-            this.USDPHP.Size = new System.Drawing.Size(16, 13);
-            this.USDPHP.TabIndex = 2;
-            this.USDPHP.Text = "...";
+            this.DEGOUSDT.AutoSize = true;
+            this.DEGOUSDT.Location = new System.Drawing.Point(3, 216);
+            this.DEGOUSDT.Name = "DEGOUSDT";
+            this.DEGOUSDT.Size = new System.Drawing.Size(57, 13);
+            this.DEGOUSDT.TabIndex = 36;
+            this.DEGOUSDT.Text = "Dego Coin";
+            this.DEGOUSDT.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // USDtoPHPChecker
+            // DEGOPRICE
             // 
-            this.USDtoPHPChecker.Enabled = true;
-            this.USDtoPHPChecker.Interval = 1000;
-            this.USDtoPHPChecker.Tick += new System.EventHandler(this.USDtoPHPChecker_Tick);
+            this.DEGOPRICE.AutoSize = true;
+            this.DEGOPRICE.Location = new System.Drawing.Point(95, 216);
+            this.DEGOPRICE.Name = "DEGOPRICE";
+            this.DEGOPRICE.Size = new System.Drawing.Size(16, 13);
+            this.DEGOPRICE.TabIndex = 37;
+            this.DEGOPRICE.Text = "...";
+            this.DEGOPRICE.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // DEGOPERCENT
+            // 
+            this.DEGOPERCENT.AutoSize = true;
+            this.DEGOPERCENT.Location = new System.Drawing.Point(187, 216);
+            this.DEGOPERCENT.Name = "DEGOPERCENT";
+            this.DEGOPERCENT.Size = new System.Drawing.Size(16, 13);
+            this.DEGOPERCENT.TabIndex = 38;
+            this.DEGOPERCENT.Text = "...";
+            this.DEGOPERCENT.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Connection
             // 
@@ -598,35 +611,22 @@ namespace Binance_Exchange_Rates
             this.exitToolStripMenuItem1.Text = "Exit";
             this.exitToolStripMenuItem1.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
-            // DEGOUSDT
+            // USDPHP
             // 
-            this.DEGOUSDT.AutoSize = true;
-            this.DEGOUSDT.Location = new System.Drawing.Point(3, 216);
-            this.DEGOUSDT.Name = "DEGOUSDT";
-            this.DEGOUSDT.Size = new System.Drawing.Size(57, 13);
-            this.DEGOUSDT.TabIndex = 36;
-            this.DEGOUSDT.Text = "Dego Coin";
-            this.DEGOUSDT.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.USDPHP.AutoSize = true;
+            this.USDPHP.Location = new System.Drawing.Point(15, 42);
+            this.USDPHP.Name = "USDPHP";
+            this.USDPHP.Size = new System.Drawing.Size(51, 13);
+            this.USDPHP.TabIndex = 2;
+            this.USDPHP.Text = "1 USD = ";
             // 
-            // DEGOPRICE
+            // PHPVALUE
             // 
-            this.DEGOPRICE.AutoSize = true;
-            this.DEGOPRICE.Location = new System.Drawing.Point(95, 216);
-            this.DEGOPRICE.Name = "DEGOPRICE";
-            this.DEGOPRICE.Size = new System.Drawing.Size(16, 13);
-            this.DEGOPRICE.TabIndex = 37;
-            this.DEGOPRICE.Text = "...";
-            this.DEGOPRICE.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // DEGOPERCENT
-            // 
-            this.DEGOPERCENT.AutoSize = true;
-            this.DEGOPERCENT.Location = new System.Drawing.Point(187, 216);
-            this.DEGOPERCENT.Name = "DEGOPERCENT";
-            this.DEGOPERCENT.Size = new System.Drawing.Size(16, 13);
-            this.DEGOPERCENT.TabIndex = 38;
-            this.DEGOPERCENT.Text = "...";
-            this.DEGOPERCENT.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.PHPVALUE.Location = new System.Drawing.Point(63, 39);
+            this.PHPVALUE.Name = "PHPVALUE";
+            this.PHPVALUE.Size = new System.Drawing.Size(38, 20);
+            this.PHPVALUE.TabIndex = 5;
+            this.PHPVALUE.Text = "48.50";
             // 
             // MainForm
             // 
@@ -636,6 +636,7 @@ namespace Binance_Exchange_Rates
             this.ClientSize = new System.Drawing.Size(302, 34);
             this.ContextMenuStrip = this.MainFormContextMenuStrip;
             this.ControlBox = false;
+            this.Controls.Add(this.PHPVALUE);
             this.Controls.Add(this.ConnectionStatus);
             this.Controls.Add(this.Connection);
             this.Controls.Add(this.USDPHP);
@@ -644,14 +645,11 @@ namespace Binance_Exchange_Rates
             this.ForeColor = System.Drawing.SystemColors.Control;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "MainForm";
-            this.Opacity = 0.5D;
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Binance Exchange Rates";
             this.TopMost = true;
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
-            this.MouseEnter += new System.EventHandler(this.MainForm_MouseEnter);
-            this.MouseLeave += new System.EventHandler(this.MainForm_MouseLeave);
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseMove);
             this.Table.ResumeLayout(false);
             this.Table.PerformLayout();
@@ -701,9 +699,7 @@ namespace Binance_Exchange_Rates
         private System.Windows.Forms.Label BNBPERCENT;
         private System.Windows.Forms.Label LINKPERCENT;
         private System.Windows.Forms.Label XMRPERCENT;
-        private System.Windows.Forms.Label USDPHP;
         private System.Windows.Forms.Label BTCPRICE;
-        private System.Windows.Forms.Timer USDtoPHPChecker;
         private System.Windows.Forms.Label Connection;
         private System.Windows.Forms.Label ConnectionStatus;
         private System.Windows.Forms.ContextMenuStrip MainFormContextMenuStrip;
@@ -717,6 +713,8 @@ namespace Binance_Exchange_Rates
         private System.Windows.Forms.Label DEGOUSDT;
         private System.Windows.Forms.Label DEGOPRICE;
         private System.Windows.Forms.Label DEGOPERCENT;
+        private System.Windows.Forms.Label USDPHP;
+        private System.Windows.Forms.TextBox PHPVALUE;
     }
 }
 
